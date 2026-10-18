@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: stateless-analytics-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: API_KEY
+        sync: false
+      - key: USER_EMAIL
+        value: shubhamsingh7307529@gmail.com
