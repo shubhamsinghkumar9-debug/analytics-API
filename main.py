@@ -6,7 +6,7 @@ from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-API_KEY = os.environ.get("API_KEY", "ak_u98ziziqdwwek4hmkibxsd72")
+API_KEY = "ak_u98ziziqdwwek4hmkibxsd72"
 USER_EMAIL = os.environ.get("USER_EMAIL", "shubhamsingh7307529@gmail.com")
 
 app = FastAPI(title="Stateless Analytics API")
