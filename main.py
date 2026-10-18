@@ -31,8 +31,13 @@ class AnalyticsRequest(BaseModel):
 def root():
     return {"status": "ok", "endpoint": "POST /analytics"}
 
+
+
 @app.post("/analytics")
-def analytics(body: AnalyticsRequest, x_api_key: str | None = Header(default=None, alias="X-API-Key")):
+def analytics(
+    body: AnalyticsRequest,
+    x_api_key: str | None = Header(default=None, alias="X-API-Key")
+):
     if x_api_key != API_KEY:
         raise HTTPException(status_code=401, detail="Unauthorized")
 
